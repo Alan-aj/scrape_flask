@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import csv
 from datetime import date
+from db import *
    
 URL = "https://www.theverge.com/"
 r = requests.get(URL)
@@ -35,3 +36,5 @@ with open(filename, 'w', newline='') as f:
     w.writeheader()
     for article in articles:
         w.writerow(article)
+
+addData(articles)
