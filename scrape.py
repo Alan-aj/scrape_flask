@@ -35,10 +35,10 @@ def job():
             w.writerow(article)
 
     addData(articles)
-    print("job done")
+    print("job done - ",d1)
 
-# schedule.every().day.at("07:00").do(job)
-schedule.every(1).minutes.do(job)
+schedule.every().day.at("07:00").do(job)
+# schedule.every(1).minutes.do(job)
 
 while True:
     schedule.run_pending()
