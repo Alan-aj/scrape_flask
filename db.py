@@ -10,12 +10,6 @@ def addData(articles):
         for article in articles:
             cur.execute(qry, (article["url"], article["headline"], article["author"], article["date"]))
             db.commit()
-        cur.execute("SELECT * from article;")
-        while True:
-            record=cur.fetchone()
-            if record==None:
-                break
-            print (record)
     except Exception as e:
         print("error in operation - ",e)
     finally:
