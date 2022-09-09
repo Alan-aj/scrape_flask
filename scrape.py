@@ -25,8 +25,6 @@ def job():
             articles.append(article)
             count += 1
 
-    # print(articles)
-
     today = date.today()
     d1 = today.strftime("%d%m%Y")
     filename = f'{d1}_verge.csv'
@@ -39,8 +37,8 @@ def job():
     addData(articles)
     print("job done")
 
-schedule.every().day.at("07:00").do(job)
-# schedule.every(2).minutes.do(job)
+# schedule.every().day.at("07:00").do(job)
+schedule.every(2).minutes.do(job)
 
 while True:
     schedule.run_pending()
