@@ -7,3 +7,5 @@ python scrape.py
 ```
 python app.py
 ```
+
+flask run

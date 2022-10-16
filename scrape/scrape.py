@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import csv
 from datetime import date
-from db import *
+from scrape.db import *
 import schedule
 import time
 
@@ -36,10 +36,11 @@ def job():
 
     addData(articles)
     print("job done - ",d1)
+    return articles
 
-schedule.every().day.at("07:00").do(job)
+# schedule.every().day.at("07:00").do(job)
 # schedule.every(1).minutes.do(job)
 
-while True:
-    schedule.run_pending()
-    time.sleep(60)
+# while True:
+#     schedule.run_pending()
+#     time.sleep(60)

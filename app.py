@@ -1,14 +1,13 @@
-from flask import Flask
-from datetime import date
+from flask import *
+from scrape.scrape import job
 
 app = Flask(__name__)
 
-
 @app.route('/')
 def home():
-    today = date.today()
-    d1 = today.strftime("%d-%m-%Y")
-    return f'Last scraped on {d1}'
+    data = job()
+    print(data)
+    return render_template("index.html", data=data)
 
 if __name__ == '__main__':
     app.run()
